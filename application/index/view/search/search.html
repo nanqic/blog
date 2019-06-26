@@ -1,0 +1,51 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>文章搜索 | {$keywords}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <link href="__PUBLIC__/style/bootstrap.css" rel="stylesheet">
+	<link href="__PUBLIC__/style/lady.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	<!--顶部通栏-->
+	<!-- 引入顶部 -->
+	{include file="common/header" /}
+
+	<div class="position"><a href='{:url('/index/index')}'>主页</a> > <a href=''>搜索: {$keywords}</a> > </div>
+	<div class="overall">
+		<div class="left">
+			{volist name="list" id="vo"}
+			<div class="xnews2">
+					{if condition="$vo['pic'] neq ''"}
+					<div style="display: inline-block; margin-right: 20px">
+						<img src="__IMG__/{$vo.pic}" height="150" width="220" alt="">
+					</div>
+					{else /}
+					<img src="__PUBLIC__/images/error.png" width="220" alt="">
+					{/if}
+				<div class="dec">
+					<h3><a target="_blank" href="{:url('article/index',array('id'=>$vo['id']))}">{$vo.title}</a></h3>
+					<div class="time">发布时间：{$vo.time}</div>
+					描述: <p>{$vo.dsc}</p>
+					<div class="time"> </div>
+				</div>
+			</div>
+			{/volist}
+			<!-- 分页 -->
+			{if condition="$list neq ''"}
+			<div class="pages" style="height: 60px">
+				<div style="text-align: center">{$list->render()}</div>
+			</div>
+			{/if}
+		</div>
+		<!-- 引入右边栏 -->
+		{include file="common/right_bar" /}
+	</div>
+	<!-- 引入底部 -->
+	{include file="common/footer" /}
+</body>
+
+</html>
