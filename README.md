@@ -10,5 +10,5 @@
 ### 其它说明
 - 新建一个数据库, 导入`blog.sql`
 - 修改application下面的`database.php`, 改为自己的数据库用户名和密码
-- 如果部署在远端, 把public下面`index.php`的SITE_URL修改为自己服务器地址
+- 如果部署在远端, 把public下面`index.php`的SITE_URL修改为自己绑定的域名
 - 有问题欢迎指正
