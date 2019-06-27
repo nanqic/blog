@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:75:"D:\Software\Wamp\www\blog\public/../application/index\view\index\index.html";i:1561555667;s:67:"D:\Software\Wamp\www\blog\application\index\view\common\header.html";i:1561549442;s:70:"D:\Software\Wamp\www\blog\application\index\view\common\right_bar.html";i:1561552852;s:67:"D:\Software\Wamp\www\blog\application\index\view\common\footer.html";i:1561553787;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:75:"D:\Software\Wamp\www\blog\public/../application/index\view\index\index.html";i:1561555667;s:67:"D:\Software\Wamp\www\blog\application\index\view\common\header.html";i:1561604052;s:70:"D:\Software\Wamp\www\blog\application\index\view\common\right_bar.html";i:1561552852;s:67:"D:\Software\Wamp\www\blog\application\index\view\common\footer.html";i:1561553787;}*/ ?>
 <!DOCTYPE html
 	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,7 +16,8 @@
 	<!-- 引入顶部 -->
 	<div class="ladytop" style="height: 75px">
     <div class="nav">
-        <div class="right">
+                <div style="display: inline-block;position: relative; "><img src="/static/index/images/bitbull.png"  style="position: relative;bottom:10px;" alt=""></div>
+                <div class="right">
             <div class="box">
                 <a href="<?php echo url('/index'); ?>">首页</a>
                 <?php if(is_array($cates) || $cates instanceof \think\Collection || $cates instanceof \think\Paginator): $i = 0; $__LIST__ = $cates;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
