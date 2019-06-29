@@ -21,7 +21,7 @@ class Article extends Base
                 'title' => input('title'),
                 'author' => input('author'),
                 'dsc' => input('dsc'),
-                'keywords' => input('keywords'),
+                'keywords' => str_replace('，',',',input('keywords')),
                 'content' => input('content'),
                 'cate' => input('cateid'),
             ];
@@ -37,7 +37,14 @@ class Article extends Base
             if (!$validate->check($data)) {
                 $this->error($validate->getError());
             }
-
+            $tagres= explode(',',$data['keywords']);
+            foreach ($tagres as $v) {
+                $tag= ['tagname' => $v];
+                $isTag = db('tags')->where('tagname','=',$v)->field('tagname')->find();
+                if ($isTag == NULL) {
+                    db('tags')->insert($tag);
+                }
+            }
             if (db('article')->insert($data)) {
                 return $this->success('添加文章成功!','lst');
             } else {

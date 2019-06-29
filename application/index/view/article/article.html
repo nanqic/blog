@@ -23,7 +23,15 @@
                 <div class="spread">
                     <span class="writor">发布时间：{$article.time}</span>
                     <span class="writor">编辑：{$article.author}</span>
-                    <span class="writor">标签：<a href='#'>{$article.keywords}</a></span>
+                    <span class="writor">标签：
+                            <?php 
+                            $arr = explode(',',$article['keywords']);
+                            foreach ($arr as $k=>$v) {
+                            if ($v != NULL) {
+                            echo "<a href='/index/search/index?keywords=$v'> $v </a> &nbsp;";
+                                }
+                            }
+                        ?></span>
                     <span class="writor">热度：{$article.click}</span>
                 </div>
             </div>
@@ -32,13 +40,22 @@
                 <img src="__IMG__/{$article.pic}" width="220" alt="">
             </div>
             {else /}
-            <img src="__PUBLIC__/images/error.png" width="220" alt="">
+            <img src="__PUBLIC__/images/error.png" width="280">
             {/if}
             <div class="substance">
                 <p>{$article.content}</p>
             </div>
+            <div class="xgread" style="margin-top: 50px">
+                <div class="til"><h4>相关阅读</h4></div>
+                <div class="rig">
+                    <ul>
+                        {volist name="xgread" id="vo"}
+                        <li><a href="{:url('article/index',array('id'=>$vo['id']))}">{$vo.title}</a></li>
+                        {/volist}
+                    </ul>
+                </div>
+            </div>
         </div>
-
         <div class="right">
             <!-- 引入右边栏 -->
             {include file="common/right_bar" /}

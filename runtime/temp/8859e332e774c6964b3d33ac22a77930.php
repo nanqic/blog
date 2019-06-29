@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:75:"D:\Software\Wamp\www\blog\public/../application/index\view\index\index.html";i:1561645156;s:67:"D:\Software\Wamp\www\blog\application\index\view\common\header.html";i:1561643463;s:70:"D:\Software\Wamp\www\blog\application\index\view\common\right_bar.html";i:1561552852;s:67:"D:\Software\Wamp\www\blog\application\index\view\common\footer.html";i:1561553787;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:75:"D:\Software\Wamp\www\blog\public/../application/index\view\index\index.html";i:1561645156;s:67:"D:\Software\Wamp\www\blog\application\index\view\common\header.html";i:1561803721;s:70:"D:\Software\Wamp\www\blog\application\index\view\common\right_bar.html";i:1561552852;s:67:"D:\Software\Wamp\www\blog\application\index\view\common\footer.html";i:1561553787;}*/ ?>
 <!DOCTYPE html
 	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -28,8 +28,8 @@
 </div>
 <div class="hotmenu">
     <div class="con">热门标签：
-        <?php if(is_array($click) || $click instanceof \think\Collection || $click instanceof \think\Paginator): $i = 0; $__LIST__ = $click;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-        <a href="<?php echo url('/index/search/index', ['keywords'=>$vo['keywords']]); ?>"><?php echo $vo['keywords']; ?></a>
+        <?php if(is_array($tags) || $tags instanceof \think\Collection || $tags instanceof \think\Paginator): $i = 0; $__LIST__ = $tags;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+        <a href="<?php echo url('/index/search/index',array('keywords'=>$vo['tagname'])); ?>"><?php echo $vo['tagname']; ?></a>
         <?php endforeach; endif; else: echo "" ;endif; ?>
     </div>
 </div>

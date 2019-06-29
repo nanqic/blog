@@ -10,9 +10,11 @@ class Base extends Controller
         $this->right();
         $cates = db('cate')->order('id desc')->select();
         $links = db('links')->select();
+        $tags= db('tags')->field('tagname')->order('id desc')->limit(6)->select();
         $this->assign([
             'cates' => $cates,
             'links' => $links,
+            'tags' => $tags,
         ]);
     }
     // 点击和推荐

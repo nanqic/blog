@@ -13,8 +13,8 @@
 </div>
 <div class="hotmenu">
     <div class="con">热门标签：
-        {volist name="click" id="vo"}
-        <a href="{:url('/index/search/index', ['keywords'=>$vo.keywords])}">{$vo.keywords}</a>
+        {volist name="tags" id="vo"}
+        <a href="{:url('/index/search/index',array('keywords'=>$vo['tagname']))}">{$vo.tagname}</a>
         {/volist}
     </div>
 </div>
