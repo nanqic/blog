@@ -29,8 +29,17 @@
 				{/if}
 				<div class="dec">
 					<h3><a target="_blank" href="{:url('article/index',array('id'=>$vo['id']))}">{$vo.title}</a></h3>
-					<div class="time">发布时间：{$vo.time}</div>
-					<p> {$vo.dsc}</p>
+					描述: <p> {$vo.dsc}</p>
+					标签: 
+					<?php 
+						$arr = explode(',',$vo['keywords']);
+						foreach ($arr as $k=>$v) {
+						if ($v != NULL) {
+						echo "<span class='label label-info'><a href='/index/search/index?keywords=$v'> $v </a> </span> &nbsp;";
+							}
+						}
+					?>
+					<div class="time">发表时间：{$vo.time}</div>
 					<div class="time"> </div>
 				</div>
 			</div>

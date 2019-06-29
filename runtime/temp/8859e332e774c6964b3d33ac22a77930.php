@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:75:"D:\Software\Wamp\www\blog\public/../application/index\view\index\index.html";i:1561645156;s:67:"D:\Software\Wamp\www\blog\application\index\view\common\header.html";i:1561803721;s:70:"D:\Software\Wamp\www\blog\application\index\view\common\right_bar.html";i:1561552852;s:67:"D:\Software\Wamp\www\blog\application\index\view\common\footer.html";i:1561553787;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:75:"D:\Software\Wamp\www\blog\public/../application/index\view\index\index.html";i:1561815546;s:67:"D:\Software\Wamp\www\blog\application\index\view\common\header.html";i:1561803721;s:70:"D:\Software\Wamp\www\blog\application\index\view\common\right_bar.html";i:1561552852;s:67:"D:\Software\Wamp\www\blog\application\index\view\common\footer.html";i:1561553787;}*/ ?>
 <!DOCTYPE html
 	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -49,8 +49,17 @@
 				<?php endif; ?>
 				<div class="dec">
 					<h3><a target="_blank" href="<?php echo url('article/index',array('id'=>$vo['id'])); ?>"><?php echo $vo['title']; ?></a></h3>
-					<div class="time">发布时间：<?php echo $vo['time']; ?></div>
-					<p> <?php echo $vo['dsc']; ?></p>
+					描述: <p> <?php echo $vo['dsc']; ?></p>
+					标签: 
+					<?php 
+						$arr = explode(',',$vo['keywords']);
+						foreach ($arr as $k=>$v) {
+						if ($v != NULL) {
+						echo "<span class='label label-info'><a href='/index/search/index?keywords=$v'> $v </a> </span> &nbsp;";
+							}
+						}
+					?>
+					<div class="time">发表时间：<?php echo $vo['time']; ?></div>
 					<div class="time"> </div>
 				</div>
 			</div>

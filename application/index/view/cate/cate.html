@@ -28,7 +28,6 @@
 				{/if}
 				<div class="dec">
 					<h3><a target="_blank" href="{:url('article/index',array('id'=>$vo['id']))}">{$vo.title}</a></h3>
-					<div class="time">发布时间：{$vo.time}</div>
 					描述: <p>{$vo.dsc}</p>
 					<div class="time"> </div>标签:
 					<?php 
@@ -39,6 +38,7 @@
 							}
 						}
 					?>
+					<div class="time">发表时间：{$vo.time}</div>
 				</div>
 			</div>
 			{/volist}
