@@ -1,0 +1,111 @@
+/*******************注册页样式*****************/
+body{
+	background-color: #f0f0f0;
+}
+#wrap a{
+	text-decoration: none;
+}
+#wrap{
+	width: 60%;
+	margin: 0 auto;
+	background-color: #fff;
+	text-align: center;
+	padding-bottom: 60px;
+}
+#wrap input{
+	padding-left: 30px;
+}
+
+#login-row{
+	padding: 30px 0;
+	text-align: center;
+}
+#reg-btn{
+	height: 40px;
+	width: 240px;
+	margin: 30px 0;
+}
+#reg-h{
+	display: inline-block;	
+	width: 50px;
+   	height: 30px;
+   	margin-left: 15px;
+}
+#login-h{
+	display: inline-block;	
+	width: 50px;
+   	height: 30px;
+   	 margin-right: 15px;
+}
+#login-h:hover{
+    border-bottom: 2px solid orange;
+}
+#reg-h:hover{
+    border-bottom: 2px solid orange;
+}
+.form-control{
+	position: relative;
+}
+.reg-ic{
+	position: absolute;
+	left: 11px;
+	top: 16px;
+	z-index: 10;
+}
+input::placeholder{
+	font-size: 14px;
+	text-indent: 15px;
+}
+*{
+	border-radius: 0;
+}
+#social-line{
+	position: relative;
+}
+#social-line::before{
+    content: "";
+    border-top: 1px solid #b5b5b5;
+    display: block;
+    position: absolute;
+    width: 60px;
+    top: 5px;
+    right: 20em;
+}
+#social-line::after{
+    content: "";
+    border-top: 1px solid #b5b5b5;
+    display: block;
+    position: absolute;
+    width: 60px;
+    top: 5px;
+    left: 20em;
+}
+.light{
+	color: #666;
+}
+.back-home{
+	display: block;
+	padding: 20px;
+	text-align: left;
+}
+
+/*******************注册页样式结束*****************/
+
+
+
+/*******************登录页样式开始*****************/
+
+#reb-me{
+	text-align: left;
+	font-size: 14px;
+	color: #969696;
+	margin-top: 10px;
+}
+#ques{
+	text-align: right;
+}
+#ques a{
+	color: #969696;
+}
+
+/*******************登录页样式结束*****************/

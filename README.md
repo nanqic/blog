@@ -1,19 +1,9 @@
-# thinkphp个人博客0.5
+# this is a php blog
+## env:
+- php 7.2
+- mysql 5.7
+- apache 2.4
+### @snow wind blog
+### @author by nanqic
+### 完成时间2018.6
 
-## 主要实现以下功能:
-- 前台文章展示, 包括栏目, 关键字, 搜索等功能
-- 后台管理员添加, 文章编辑, 栏目管理
-
-## 运行环境
-- *php5.6或更高, 建议7.3*
-- *MySQL5.7*
-- *Apache2.4*
-
-## 其它说明
-- 新建一个数据库, 导入`blog.sql`
-- 修改application下面的`database.php`, 改为自己的数据库用户名和密码
-- 如果部署在远端, 把public下面`index.php`的SITE_URL修改为自己绑定的域名
-
-## 更新日志
-- 完善了标签搜索功能 6/29
-- 修复了后台标签修改功能 6/30
